@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="todoApp">
+        <head>
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+          <script src="todo.js"></script>
+    <link rel="stylesheet" href="todo.css">
+        </head>
+    <body>
+        <div class="usr-bdy" ng-app>
+            <h1 class="usr-header">Users</h1>
+            <div ng-controller="NodeFlowCtrl">
+              <ul class="usr-list">
+                <li class="usr-item" ng-model="nodeFlow.nextNode" ng-repeat="nodeFlow in nodeFlows">
+                  <p class="usr-id-label">User Id:
+                    <span class="usr-id" ng-bind="nodeFlow.user.id">{{nodeFlow.user.id}}</span>
+                  </p>
+                  <p class="usr-name-label">
+                    Email Address:
+                    <span class="usr-email" ng-bind="nodeFlow.user.email"> {{nodeFlow.user.email}}</span>
+                  </p>
+                  <a ng-click="addNextNode()" ng-model="nodeFlow.nextNode" ng-class="usr-btn-primary" type="submit" value="Next Node">Next Node
+                    <span id="usr-arrow"> &#x2192;</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>          
+    </body>
+</html>
